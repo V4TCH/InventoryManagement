@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "467566444571",
+    "firebase_url": "https://inventorymanagement-1337.firebaseio.com",
+    "project_id": "inventorymanagement-1337",
+    "storage_bucket": "inventorymanagement-1337.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467566444571:android:9e28b3851a6dfb8d",
+        "android_client_info": {
+          "package_name": "com.universityprojects.v4tch.inventorymanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467566444571-ip5plksll2iv0qlbcqpf2or9tspqndr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApqqKxUkig1taLpJE1_tn4aYI36H9_Ifo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
