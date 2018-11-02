@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">InventoryManagement</string>
     <string name="loader_text">Loading</string>
+    <string name="splash_icon">Icon</string>
 </resources>
