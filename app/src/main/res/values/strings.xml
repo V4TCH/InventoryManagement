@@ -2,4 +2,9 @@
     <string name="app_name">InventoryManagement</string>
     <string name="loader_text">Loading</string>
     <string name="splash_icon">Icon</string>
+    <string name="invent_icon">Inventory Management</string>
+    <string name="login">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="text_pass">Password</string>
+    <string name="text_email">Email</string>
 </resources>
