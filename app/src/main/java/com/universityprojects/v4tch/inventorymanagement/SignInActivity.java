@@ -32,11 +32,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         mStatusText = findViewById(R.id.statusText);
         mDetailsText = findViewById(R.id.detailText);
-        mEmailText = findViewById(R.id.email_text);
-        mPasswordText = findViewById(R.id.passw_text);
+        mEmailText = findViewById(R.id.login_email_text);
+        mPasswordText = findViewById(R.id.login_password_text);
 
-        findViewById(R.id.email_text);
-        findViewById(R.id.passw_text);
+        findViewById(R.id.login_email_text);
+        findViewById(R.id.login_password_text);
 
         findViewById(R.id.btn_login).setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
