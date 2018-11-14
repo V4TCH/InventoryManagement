@@ -90,6 +90,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         signIn(mEmailText.getText().toString(), mPasswordText.getText().toString());
+
     }
 
 

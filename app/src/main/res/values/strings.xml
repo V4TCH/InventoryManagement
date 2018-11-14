@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">InventoryManagement</string>
+    <string name="app_name">Inventory Management</string>
     <string name="loader_text">Loading</string>
     <string name="splash_icon">Icon</string>
     <string name="invent_icon">Inventory Management</string>
@@ -10,5 +10,6 @@
     <string name="auth_failed">Authentication Failed</string>
     <string name="details">Details</string>
     <string name="status">Status</string>
+    <string name="title_activity_inventory_main">InventoryMainActivity</string>
 
 </resources>

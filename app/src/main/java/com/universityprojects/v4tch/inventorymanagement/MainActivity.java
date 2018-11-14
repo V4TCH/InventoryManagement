@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button buttonLogin;
-    Button buttonSignup;
+    Button buttonSign_up;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buttonLogin = findViewById(R.id.btn_login);
-        buttonSignup = findViewById(R.id.btn_signup);
+        buttonSign_up = findViewById(R.id.btn_signup);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonSignup.setOnClickListener(new View.OnClickListener() {
+        buttonSign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent2 = new Intent(MainActivity.this, SignUpActivity.class);
