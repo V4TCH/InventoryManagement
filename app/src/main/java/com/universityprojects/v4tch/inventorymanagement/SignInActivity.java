@@ -1,5 +1,6 @@
 package com.universityprojects.v4tch.inventorymanagement;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -54,11 +55,15 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            mStatusText.setText(R.string.auth_success);
+                            Toast.makeText(SignInActivity.this, "Authentication Success!", Toast.LENGTH_SHORT).show();
+
                         } else {
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(SignInActivity.this, "Authentication failed...", Toast.LENGTH_SHORT).show();
+
                         }
-                        if (task.isSuccessful()) {
+                        if (!task.isSuccessful()) {
                             mStatusText.setText(R.string.auth_failed);
                         }
                     }
@@ -90,8 +95,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         signIn(mEmailText.getText().toString(), mPasswordText.getText().toString());
-
+            Intent inventory = new Intent(SignInActivity.this, InventoryMainActivity.class);
+            startActivity(inventory);
     }
-
-
 }

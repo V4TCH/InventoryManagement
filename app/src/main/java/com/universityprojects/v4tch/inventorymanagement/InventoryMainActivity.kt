@@ -2,7 +2,7 @@ package com.universityprojects.v4tch.inventorymanagement
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
 
 import kotlinx.android.synthetic.main.activity_inventory_main.*
 
@@ -18,5 +18,4 @@ class InventoryMainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
     }
-
 }

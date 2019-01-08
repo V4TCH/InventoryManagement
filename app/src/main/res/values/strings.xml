@@ -11,5 +11,6 @@
     <string name="details">Details</string>
     <string name="status">Status</string>
     <string name="title_activity_inventory_main">InventoryMainActivity</string>
+    <string name="auth_success">Authentication Successful!</string>
 
 </resources>
