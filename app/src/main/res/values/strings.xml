@@ -12,5 +12,19 @@
     <string name="status">Status</string>
     <string name="title_activity_inventory_main">InventoryMainActivity</string>
     <string name="auth_success">Authentication Successful!</string>
+    <string name="title_activity_nav">NavActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="nav_menu_title">Inventory Management</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_in">Sign In</string>
+    <string name="already_registered">Have an account? Login</string>
+    <string name="username">Username</string>
+    <string name="firebase_info">Creating an account will add your information to the cloud</string>
+    <string name="my_inventories">My Inventories</string>
 
 </resources>

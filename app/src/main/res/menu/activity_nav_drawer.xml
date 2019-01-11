@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/nav_menu_title">
+            <menu>
+                <item
+                    android:id="@+id/nav_inventory"
+                    android:icon="@drawable/nav_add"
+                    android:title="@string/my_inventories"/>
+                <item
+                    android:id="@+id/nav_sign_out"
+                    android:icon="@drawable/nav_sign_out"
+                    android:title="@string/sign_out"/>
+            </menu>
+        </item>
+    </group>
+</menu>
+
