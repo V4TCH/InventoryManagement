@@ -1,5 +1,6 @@
 package com.universityprojects.v4tch.inventorymanagement;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -83,8 +85,14 @@ public class NavActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_logout)
+        {
+            mAuth.signOut();
+            Intent logoutIntent = new Intent(NavActivity.this, MainActivity.class);
+            logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(logoutIntent);
+            Toast.makeText(NavActivity.this, "Logged out", Toast.LENGTH_SHORT).show();
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -95,9 +103,13 @@ public class NavActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_inventory) {
-            // Handle the camera action
-        } else if (id == R.id.nav_sign_out) {
 
+        } else if (id == R.id.nav_sign_out) {
+            mAuth.signOut();
+            Intent logoutIntent = new Intent(NavActivity.this, MainActivity.class);
+            logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(logoutIntent);
+            Toast.makeText(NavActivity.this, "Logged out", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout)findViewById(R.id.drawer_layout);

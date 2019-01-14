@@ -53,6 +53,8 @@ public class SignInActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 checkUserExistence();
+                                Toast.makeText(SignInActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+
                             } else {
                                 Toast.makeText(SignInActivity.this, "Unable to login, user does not exist!", Toast.LENGTH_SHORT).show();
                             }
@@ -72,6 +74,7 @@ public class SignInActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if ( dataSnapshot.hasChild(user_id)) {
                     startActivity(new Intent(SignInActivity.this, NavActivity.class));
+                    Toast.makeText(SignInActivity.this, "Success!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(SignInActivity.this, "User is not registered in database!", Toast.LENGTH_SHORT).show();
                 }

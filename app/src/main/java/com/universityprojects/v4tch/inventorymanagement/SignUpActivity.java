@@ -37,6 +37,12 @@ public class SignUpActivity extends AppCompatActivity {
         passwordField = (EditText)findViewById(R.id.signup_passw_text);
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+        loginTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
+            }
+        });
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +70,5 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
