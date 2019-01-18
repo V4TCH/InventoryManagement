@@ -26,5 +26,6 @@
     <string name="username">Username</string>
     <string name="firebase_info">Creating an account will add your information to the cloud</string>
     <string name="my_inventories">My Inventories</string>
+    <string name="signin_info">Please sign in with your email address and password</string>
 
 </resources>
