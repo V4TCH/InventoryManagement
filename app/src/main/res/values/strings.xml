@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Inventory Management</string>
+    <string name="app_name">iManage</string>
     <string name="loader_text">Loading</string>
     <string name="splash_icon">Icon</string>
     <string name="invent_icon">Inventory Management</string>
@@ -26,6 +26,10 @@
     <string name="username">Username</string>
     <string name="firebase_info">Creating an account will add your information to the cloud</string>
     <string name="my_inventories">My Inventories</string>
-    <string name="signin_info">Please sign in with your email address and password</string>
+    <string name="txt_bypass">Bypass</string>
+    <string name="signin_info">Please sign in with your email and password</string>
+    <string name="rack_name">Rack Name</string>
+    <string name="rack_amount">Insert amount</string>
+    <string name="txt_add">Add</string>
 
 </resources>

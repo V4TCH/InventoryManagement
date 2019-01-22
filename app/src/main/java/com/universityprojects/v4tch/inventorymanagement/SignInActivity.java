@@ -27,7 +27,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText loginEmail, loginPass;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-    private Button loginBtn;
+    private Button loginBtn, bypassBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class SignInActivity extends AppCompatActivity {
         loginBtn = (Button)findViewById(R.id.btn_login);
         loginEmail = (EditText)findViewById(R.id.login_email_text);
         loginPass = (EditText)findViewById(R.id.login_password_text);
+        bypassBtn = (Button)findViewById(R.id.btn_bypass);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
@@ -64,6 +65,14 @@ public class SignInActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(SignInActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        bypassBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginEmail.setText("alecsponge@gmail.com");
+                loginPass.setText("things1");
             }
         });
     }
