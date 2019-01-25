@@ -46,7 +46,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(SignInActivity.this, "Processing...",Toast.LENGTH_LONG).show();
-                String email = loginEmail.getText().toString().trim();
+                final String email = loginEmail.getText().toString().trim();
                 String password = loginPass.getText().toString().trim();
 
                 if (!TextUtils.isEmpty(email)&& !TextUtils.isEmpty(password)) {
@@ -71,8 +71,8 @@ public class SignInActivity extends AppCompatActivity {
         bypassBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginEmail.setText("alecsponge@gmail.com");
-                loginPass.setText("things1");
+                loginEmail.setText("testuser@testemail.com");
+                loginPass.setText("testpassword123");
             }
         });
     }

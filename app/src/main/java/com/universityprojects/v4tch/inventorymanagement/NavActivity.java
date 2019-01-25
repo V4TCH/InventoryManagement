@@ -2,12 +2,12 @@ package com.universityprojects.v4tch.inventorymanagement;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.*;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,12 +19,11 @@ import android.widget.*;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.firebase.ui.database.SnapshotParser;
+import com.google.android.gms.vision.barcode.Barcode;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.Query;
-import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,11 +35,12 @@ public class NavActivity extends AppCompatActivity
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
-    private EditText editText, etd;
-    private Button button;
+    private EditText rackName, rackAmount;
+    private Button add_button, cam_button;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private FirebaseRecyclerAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,21 +49,31 @@ public class NavActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        editText = (EditText)findViewById(R.id.et);
-        etd = (EditText)findViewById(R.id.etd);
-        button = (Button)findViewById(R.id.btn);
+        rackName = (EditText)findViewById(R.id.et_rackName);
+        rackAmount = (EditText)findViewById(R.id.et_rackAmount);
+        add_button = (Button)findViewById(R.id.btn);
+        cam_button = (Button)findViewById(R.id.cam_btn);
         recyclerView = (RecyclerView)findViewById(R.id.list);
+        final Barcode qrcode = getIntent().getParcelableExtra("barcode");
 
-        button.setOnClickListener(new View.OnClickListener() {
+        add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("inventories").push();
                 Map<String, Object> map = new HashMap<>();
                 map.put("id", databaseReference.getKey());
-                map.put("title", editText.getText().toString());
-                map.put("desc", etd.getText().toString());
+                map.put("rackName", rackName.getText().toString());
+                map.put("rackAmount", rackAmount.getText().toString());
                 databaseReference.setValue(map);
                 fetch();
+            }
+        });
+
+        cam_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent camIntent = new Intent(NavActivity.this, ScannerActivity.class);
+                startActivity(camIntent);
             }
         });
 
@@ -71,18 +81,6 @@ public class NavActivity extends AppCompatActivity
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         fetch();
-
-
-
-
-        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -120,9 +118,7 @@ public class NavActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        } else if (id == R.id.action_logout) {
+        if (id == R.id.action_logout) {
             mAuth.signOut();
             Intent logoutIntent = new Intent(NavActivity.this, MainActivity.class);
             logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -183,8 +179,8 @@ public class NavActivity extends AppCompatActivity
                             @Override
                             public Model parseSnapshot(@NonNull DataSnapshot snapshot) {
                                 return new Model(snapshot.child("id").getValue().toString(),
-                                        snapshot.child("title").getValue().toString(),
-                                        snapshot.child("desc").getValue().toString());
+                                        snapshot.child("rackName").getValue().toString(),
+                                        snapshot.child("rackAmount").getValue().toString());
                             }
                         })
                         .build();

@@ -3,6 +3,9 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.universityprojects.v4tch.inventorymanagement">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -23,14 +26,21 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".SignInActivity"/>
-        <activity android:name=".SignUpActivity"/>
+        <activity
+            android:label="Sign In"
+            android:name=".SignInActivity" />
+        <activity android:name=".SignUpActivity"
+            android:label="Sign Up"/>
+        <activity android:name=".ScannerActivity"
+            android:label="Please scan QR code"/>
 
         <activity
                 android:name=".NavActivity"
-                android:label="@string/title_activity_nav"
+                android:label="Add items manually or scan QR code"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode"/>
     </application>
 
 </manifest>

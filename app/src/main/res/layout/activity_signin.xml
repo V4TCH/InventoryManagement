@@ -33,21 +33,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoText" />
 
-    <EditText
-        android:id="@+id/login_email_text"
-        android:layout_width="265dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:autofillHints="@string/text_email"
-        android:ems="10"
-        android:hint="@string/text_email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoText" />
-
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="197dp"

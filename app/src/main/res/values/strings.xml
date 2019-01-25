@@ -31,5 +31,10 @@
     <string name="rack_name">Rack Name</string>
     <string name="rack_amount">Insert amount</string>
     <string name="txt_add">Add</string>
+    <string name="company_name">Company Name</string>
+    <string name="cam_input">Input</string>
+    <string name="scan">Scan</string>
+    <string name="add_to_inven">Click the Input button to add the QR code data to your current Inventory</string>
+    <string name="iManage">iManage - Inventory Management</string>
 
 </resources>

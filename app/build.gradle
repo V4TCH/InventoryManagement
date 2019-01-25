@@ -8,11 +8,12 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.universityprojects.v4tch.inventorymanagement"
-        minSdkVersion 27
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -43,6 +44,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:4.3.1'
     implementation 'com.firebaseui:firebase-ui-auth-github:4.3.1'
     implementation 'com.firebaseui:firebase-ui-storage:4.3.1'
+    implementation 'com.google.android.gms:play-services-vision:17.0.2'
 
 }
 
