@@ -28,6 +28,7 @@ public class SignInActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private Button loginBtn, bypassBtn;
+    private TextView signUpTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class SignInActivity extends AppCompatActivity {
         loginEmail = (EditText)findViewById(R.id.login_email_text);
         loginPass = (EditText)findViewById(R.id.login_password_text);
         bypassBtn = (Button)findViewById(R.id.btn_bypass);
+        signUpTxt = (TextView)findViewById(R.id.signupTxt);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
@@ -73,6 +75,14 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 loginEmail.setText("testuser@testemail.com");
                 loginPass.setText("testpassword123");
+            }
+        });
+
+        signUpTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signInIntent = new Intent(SignInActivity.this, SignUpActivity.class);
+                startActivity(signInIntent);
             }
         });
     }

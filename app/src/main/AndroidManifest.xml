@@ -36,7 +36,7 @@
 
         <activity
                 android:name=".NavActivity"
-                android:label="Add items manually or scan QR code"
+                android:label="Enter or scan items"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
